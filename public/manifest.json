@@ -1,0 +1,38 @@
+{
+  "theme_color": "#D0E37F",
+  "background_color": "rgb(34, 29, 35)",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Spider Focus",
+  "id": "",
+  "short_name": "spider_focus",
+  "description": "Increase productivity with Pomodoro technique",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "label": "Spider Focus",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "label": "Spider Focus"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "label": "Spider Focus"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "label": "Spider Focus"
+    }
+  ]
+}
