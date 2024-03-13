@@ -1,9 +1,9 @@
 version: '3.1'
 
 services:
-  pomodoro:
-    container_name: pomodoro
-    hostname: pomodoro
+  spider-focus:
+    container_name: spider-focus
+    hostname: spider-focus
     restart: unless-stopped
     build:
       context: .
