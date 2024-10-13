@@ -21,7 +21,7 @@ export default function Metadata(props: Props) {
         if (activeTask)
           title += activeTask.title;
         else
-          title += 'Smash that focus!';
+          title += 'Focus time';
 
         break;
       }
@@ -34,6 +34,9 @@ export default function Metadata(props: Props) {
         title += 'Enjoy your long break';
 
         break;
+      }
+      default: {
+        title += "Do one thing at once";
       }
     }
 
@@ -50,6 +53,7 @@ export default function Metadata(props: Props) {
   return (
     <>
       <title>{getTitle()}</title>
+      <meta name="description" content="Context Switching done in the right way" />
       <link rel="shortcut icon" type="image/png" href={getFavIcon()} sizes="16x16"></link>
       <link rel="manifest" href="/manifest.json" />
     </>

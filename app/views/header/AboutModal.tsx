@@ -1,6 +1,8 @@
 import { StyledAboutModalContainer } from "@/app/styling/header/StyledAboutModalContainer";
 import { Box, Link, Modal, Typography } from "@mui/material";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import Image from 'next/image';
 
 interface Props {
@@ -32,8 +34,49 @@ export default function AboutModal(props: Props) {
           <Typography variant="body2" sx={{ textIndent: '20px' }}>So, get ready to unleash your inner spider, and weave your path to success with precision and flair!</Typography>
         </Box>
 
+        <Box my={5} display='flex' flexDirection='column' alignItems='center'>
+          <Typography variant="body2" sx={{ textIndent: '10px' }}>No Cookies, Trackers, or Ads used.</Typography>
+          <Typography variant="body2" mb={2} sx={{ textIndent: '10px' }}>It's 100% Free, just enjoy it!</Typography>
+
+          <Typography variant="body1" mb={1}>Find me on</Typography>
+
+          <Box onClick={e => e.stopPropagation()} display="flex" gap={3}>
+            <Link display='flex' href='https://linkedin.com/in/gabrieltira' target="_blank" rel='noreferrer'>
+              <LinkedInIcon color="primary" fontSize="large" />
+              {/* <Typography ml={0.5}>Gabriel Tira</Typography> */}
+            </Link>
+            <Link display='flex' href='https://instagram.com/gabriel.tira' target="_blank" rel='noreferrer'>
+              <InstagramIcon color="primary" fontSize="large" />
+              {/* <Typography ml={0.5}>Gabriel Tira</Typography> */}
+            </Link>
+            <Link display='flex' href='https://x.com/TiraGabriel' target="_blank" rel='noreferrer'>
+              <TwitterIcon color="primary" fontSize="large" />
+              {/* <Typography ml={0.5}>Gabriel Tira</Typography> */}
+            </Link>
+          </Box>
+        </Box>
+
+        <Box my={5}>
+          <Typography textAlign="center" mb={1}>Other Projects</Typography>
+
+          <Box display="flex" flexDirection="row" gap={3}>
+            {Projects.map((project, index) => (
+              <Box key={index} display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap={1}>
+                <img src={`${project.href}/favicon.ico`} alt={project.name} width={50} height={50} />
+
+                <Link href={project.href} textAlign="center">
+                  <Typography variant="caption" color='secondary' sx={{ mb: 1 }}>
+                    {project.label}
+                  </Typography>
+
+                </Link>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
         <Box mt={5} display='flex' flexDirection='column' alignItems='center'>
-          <Typography variant="body1" color='secondary' sx={{ mb: 1 }} textAlign='center'>Get more with focus audio</Typography>
+          <Typography variant="body1" color='secondary' sx={{ mb: 1 }} textAlign='center'>Get more with focus sounds</Typography>
 
           <Box onClick={e => e.stopPropagation()}>
             <Link display='flex' alignItems='center' href='https://bat-focus.vercel.app/' target="_blank" rel='noreferrer'>
@@ -49,19 +92,26 @@ export default function AboutModal(props: Props) {
           </Box>
         </Box>
 
-        <Box mt={5} display='flex' flexDirection='column' alignItems='center'>
-          <Typography variant="body2" sx={{ textIndent: '10px' }}>No Cookies, Trackers, or Ads used.</Typography>
-          <Typography variant="body2" mb={2} sx={{ textIndent: '10px' }}>It's 100% Free, just enjoy it!</Typography>
-
-          <Typography variant="caption">Find me on</Typography>
-          <Box onClick={e => e.stopPropagation()}>
-            <Link display='flex' href='https://linkedin.com/in/gabriel-tira-81237b131' target="_blank" rel='noreferrer'>
-              <LinkedInIcon color="primary" />
-              <Typography ml={0.5}>Gabriel Tira</Typography>
-            </Link>
-          </Box>
-        </Box>
       </StyledAboutModalContainer>
     </Modal >
   );
 }
+
+
+const Projects = [
+  {
+    name: "GT Website",
+    label: "Mind Opening Letters",
+    href: "https://gabrieltira.com"
+  },
+  {
+    name: "Raven Fitness",
+    label: "Get Everything from Fitness",
+    href: "https://fitness.gabrieltira.com"
+  },
+  {
+    name: "Balance Battle",
+    label: "Gamified Habits Tracker",
+    href: "https://balancebattle.com"
+  }
+];
