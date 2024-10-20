@@ -105,9 +105,9 @@ const Projects = [
     href: "https://gabrieltira.com"
   },
   {
-    name: "Raven Fitness",
+    name: "Just Overload",
     label: "Get Everything from Fitness",
-    href: "https://fitness.gabrieltira.com"
+    href: "https://justoverload.com"
   },
   {
     name: "Balance Battle",
